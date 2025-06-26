@@ -1,65 +1,49 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/AllFlights.css';
 
 const AllFlights = () => {
-    const [flights, setFlights] = useState([]);
-    const navigate = useNavigate();
-  
-    
-    const fetchFlights = async () =>{
-      await axios.get('http://localhost:6001/fetch-flights').then(
-        (response)=>{
-          setFlights(response.data);
-          console.log(response.data)
-        }
-        )
-      }
-      
-      useEffect(()=>{
-        fetchFlights();
-      }, [])
-      
-    return (
-      <div className="allFlightsPage">
-        <h1>All Flights</h1>
-  
-        <div className="allFlights">
-  
-          {flights.map((Flight)=>{
-            return(
-  
-                <div className="allFlights-Flight" key={Flight._id}>
-                  <p><b>_id:</b> {Flight._id}</p>
-                  <span>
-                    <p><b>Flight Id:</b> {Flight.flightId}</p>
-                    <p><b>Flight name:</b> {Flight.flightName}</p>
-                  </span>
-                  <span>
-                    <p><b>Starting station:</b> {Flight.origin}</p>
-                    <p><b>Departure time:</b> {Flight.departureTime}</p>
-                  </span>
-                  <span>
-                    <p><b>Destination:</b> {Flight.destination}</p>
-                    <p><b>Arrival time:</b> {Flight.arrivalTime}</p>
-                  </span>
-                  <span>
-                    <p><b>Base price:</b> {Flight.basePrice}</p>
-                    <p><b>Total seats:</b> {Flight.totalSeats}</p>
-                  </span>
-                </div>
-            )
-          })}
-  
-  
-  
-  
-  
-   
+  const [flights, setFlights] = useState([]);
+  const navigate = useNavigate();
+
+
+
+  const fetchFlights = async () => {
+    try {
+      const response = await axios.get('http://localhost:6001/fetch-flights');
+      setFlights(response.data);
+    } catch (error) {
+      console.error("Failed to fetch flights:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchFlights();
+  }, []);
+
+  return (
+    <div className="allFlightsPage">
+      <h1>All Available Flights</h1>
+      <div className="allFlights-wrapper">
+        <div className="allFlights-grid">
+          {flights.map((flight) => (
+            <div className="allFlights-Flight" key={flight._id}>
+             
+              <h3>{flight.flightName}</h3>
+              <p><b>Flight ID:</b> {flight.flightId}</p>
+              <p><b>From:</b> {flight.origin} → <b>To:</b> {flight.destination}</p>
+              <p><b>Departure:</b> {new Date(flight.departureTime).toLocaleString()}</p>
+              <p><b>Arrival:</b> {new Date(flight.arrivalTime).toLocaleString()}</p>
+              <p><b>Base Price:</b> ₹{flight.basePrice}</p>
+              <p><b>Total Seats:</b> {flight.totalSeats}</p>
+              <button className="btn" onClick={() => navigate(`/book-flight/${flight._id}`)}>Book Now</button>
+            </div>
+          ))}
         </div>
       </div>
-    )
-  }
+    </div>
+  );
+};
 
-export default AllFlights
+export default AllFlights;

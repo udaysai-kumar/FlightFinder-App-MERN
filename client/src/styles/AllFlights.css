@@ -1,62 +1,103 @@
-.allFlightsPage{
-    margin: 13vh 0 0 0;
-    height: fit-content;
-    width: 100%;
+.allFlightsPage {
+  padding-top: 90px;
+  min-height: 100vh;
+  background-image: url('https://img.freepik.com/premium-photo/airplane-model-with-laptop-computer-wooden-table-composition-with-toy-plane-table-laptop-travel-planning-concept-globalization-business-processing-concept_96727-2359.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.allFlightsPage h1{
-    color: rgb(73, 111, 138);
-    margin-left: 3vw;
+.allFlightsPage h1 {
+  font-size: 2.0rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 2rem;
+  background-color: rgba(2, 62, 138, 0.95); /* Strong contrast blue */
+  padding: 12px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0);
+  font-weight: bold;
 }
 
-.allFlights{
 
-    margin-top: 5vh;
-    width: 90%;
-    margin-left: 5%;
-    height: fit-content;
-    padding-bottom: 5vh;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    row-gap: 30px;
+.allFlights-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
 }
 
-.allFlights .allFlights-Flight{
-
-    background-color: rgba(237, 239, 241, 0.212);
-    width: 90%;
-    margin-left: 5%;
-    padding: 3vh 2vw;
-    border-radius: 0.7rem;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
-}
-.allFlights .allFlights-Flight:hover{
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-}
-.allFlights .allFlights-Flight span{
-    display: flex;
-    gap: 25px;
-    
+.allFlights-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
 }
 
-.allFlights .allFlights-Flight p{
-    margin: 0;
-    margin-bottom: 3px;
-    color: rgb(46, 104, 135);
+.allFlights-Flight {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.2rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 }
-.allFlights .allFlights-Flight p b{
 
-    font-weight: 600;
+.allFlights-Flight:hover {
+  transform: translateY(-4px);
 }
-.allFlights .allFlights-Flight ol{
-    margin: 0;   
-    font-size: 0.85rem;     
-}
-.allFlights .allFlights-Flight ol b{
-   font-weight: 500;      
-}
-.allFlights .allFlights-Flight button{
 
-    margin-top: 15px;
+.allFlights-Flight h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #0077b6;
+}
+
+.allFlights-Flight p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  color: #1c2b36;
+}
+
+.allFlights-Flight .btn {
+  margin-top: 0.8rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 0.9rem;
+  background-color: #00b4d8;
+  color: white;
+  width: 100%;
+  transition: background 0.2s ease;
+}
+
+.allFlights-Flight .btn:hover {
+  background-color: #0077b6;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .allFlights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .allFlights-wrapper {
+    max-width: 95%;
+  }
+}
+.flight-logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.flight-logo-img {
+  max-height: 40px;
+  max-width: 100px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
 }

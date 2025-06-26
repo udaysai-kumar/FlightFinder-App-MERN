@@ -1,0 +1,20 @@
+.seat-container {
+  display: grid;
+  grid-template-columns: repeat(6, 40px);
+  gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+}
+.seat {
+  width: 40px;
+  height: 40px;
+  background-color: #ddd;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+.seat.selected {
+  background-color: #4caf50;
+  color: white;
+}

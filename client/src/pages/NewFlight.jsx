@@ -107,6 +107,8 @@ const NewFlight = () => {
                       <option value="Kolkata">Kolkata</option>
                       <option value="varanasi">varanasi</option>
                       <option value="Jaipur">Jaipur</option>
+                      <option value="Paris">Paris</option>
+                      <option value="New York">New York</option>
                     </select>
                     <label htmlFor="floatingSelect">Departure City</label>
                   </div>
@@ -131,6 +133,8 @@ const NewFlight = () => {
                         <option value="Kolkata">Kolkata</option>
                         <option value="varanasi">varanasi</option>
                         <option value="Jaipur">Jaipur</option>
+                        <option value="Paris">Paris</option>
+                        <option value="New York">New York</option>
                       </select>
                       <label htmlFor="floatingSelect">Destination City</label>
                     </div>

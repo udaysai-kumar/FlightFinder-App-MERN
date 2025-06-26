@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
 import { GeneralContext } from '../context/GeneralContext';
+import './Register.css';
 
 const Register = ({setIsLogin}) => {
 
-  const {setUsername, setEmail, setPassword, usertype, setUsertype, register, setHomeBranch} = useContext(GeneralContext);
+  const { setUsername, setEmail, setPassword, setUsertype, register } = useContext(GeneralContext);
 
   const handleRegister = async (e) =>{
     e.preventDefault();

@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import LandingPage from './pages/LandingPage';
@@ -6,8 +6,8 @@ import Authenticate from './pages/Authenticate';
 import Bookings from './pages/Bookings';
 import Admin from './pages/Admin';
 import AllUsers from './pages/AllUsers';
-import AllBookings from './pages/AllBookings';
-import AllFlights from './pages/AllFlights';
+import AllBookings from './pages/AllBookings.jsx';
+import AllFlights from './pages/AllFlights.jsx';
 import NewFlight from './pages/NewFlight';
 import {Routes, Route} from 'react-router-dom'
 import LoginProtector from './RouteProtectors/LoginProtector';

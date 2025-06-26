@@ -65,6 +65,7 @@ const Flights = () => {
                       <div className="allFlights-Flight" key={Flight._id}>
                         <p><b>_id:</b> {Flight._id}</p>
                         <span>
+                          
                           <p><b>Flight Id:</b> {Flight.flightId}</p>
                           <p><b>Flight name:</b> {Flight.flightName}</p>
                         </span>

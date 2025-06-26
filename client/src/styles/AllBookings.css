@@ -1,0 +1,92 @@
+.bookings-page {
+  padding-top: 90px;
+  padding-inline: 2rem;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(6px);
+}
+
+.bookings-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #023e8a;
+  margin-bottom: 2rem;
+}
+
+.bookings-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto; /* centers the wrapper */
+}
+
+.bookings-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns: 2 cards left, 2 right */
+}
+
+.booking-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem 1.2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.booking-card:hover {
+  transform: translateY(-4px);
+}
+
+.booking-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #0077b6;
+}
+
+.booking-card p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  color: #1c2b36;
+}
+
+.status.confirmed {
+  color: green;
+  font-weight: 600;
+}
+
+.status.cancelled {
+  color: red;
+  font-weight: 600;
+}
+
+.btn {
+  margin-top: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.btn-danger {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c92a2a;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .bookings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bookings-wrapper {
+    max-width: 95%;
+  }
+}
