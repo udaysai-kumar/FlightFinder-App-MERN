@@ -1,1 +1,1 @@
-Flight Finder - NAvigating Your Air Travel Options
+Flight Finder - Navigating Your Air Travel Options
