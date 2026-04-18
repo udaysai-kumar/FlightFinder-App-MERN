@@ -305,3 +305,4 @@ mongoose
         });
     }
     ).catch((e) => console.log(`Error in db connection ${e}`));
+module.exports = app;
